@@ -9,14 +9,12 @@
 <section class="modal">
   <!-- Общий контейнер для табов -->
   <div class="tabs">
-
     <!--  Контейнер с вкладками   -->
     <ul class="tab-header">
       <li class="tab-header__item js-tab-trigger active" data-tab="1">Deposit</li>
       <li class="tab-header__item js-tab-trigger" data-tab="2">Withdraw</li>
       <li class="tab-header__item js-tab-trigger" data-tab="3">Rebalance</li>
     </ul>
-
     <!--  Контейнер с блоками, которые содержат контент вкладок   -->
     <ul class="tab-content">
       <li class="tab-content__item js-tab-content active" data-tab="1">
@@ -48,11 +46,7 @@
             <option value="256">256</option>
             <option value="240">240</option>
           </select>
-          <select class="field" size="1" name="withdraw amount[]">
-            <option value="withdraw amount">Withdraw amount</option>
-            <option value="256">256</option>
-            <option value="240">240</option>
-          </select>
+          <input class="field" type="text" name="withdraw amount[]" placeholder="Withdraw amount">
           <button class="button">Withdraw</button>
         </form>
       </li>
@@ -91,10 +85,8 @@
                 content = document.querySelector('.js-tab-content[data-tab="'+id+'"]'),
                 activeTrigger = document.querySelector('.js-tab-trigger.active'),
                 activeContent = document.querySelector('.js-tab-content.active');
-
             activeTrigger.classList.remove('active'); // 1
             trigger.classList.add('active'); // 2
-
             activeContent.classList.remove('active'); // 3
             content.classList.add('active'); // 4
         });
