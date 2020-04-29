@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>SwapZilla</title>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+<section class="modal">
+  <!-- Общий контейнер для табов -->
+  <div class="tabs">
+
+    <!--  Контейнер с вкладками   -->
+    <ul class="tab-header">
+      <li class="tab-header__item js-tab-trigger active" data-tab="1">Deposit</li>
+      <li class="tab-header__item js-tab-trigger" data-tab="2">Withdraw</li>
+      <li class="tab-header__item js-tab-trigger" data-tab="3">Rebalance</li>
+    </ul>
+
+    <!--  Контейнер с блоками, которые содержат контент вкладок   -->
+    <ul class="tab-content">
+      <li class="tab-content__item js-tab-content active" data-tab="1">
+        <form action="#" method="post" class="deposit-form form">
+          <select class="field select" size="1" name="name[]">
+            <option value="Kraken">Kraken</option>
+            <option value="Cthulhu">Cthulhu</option>
+            <option value="Beast">Beast</option>
+          </select>
+          <select class="field select" size="1" name="currency-deposit[]">
+            <option value="Choose currency">Choose currency</option>
+            <option value="256">256</option>
+            <option value="240">240</option>
+          </select>
+          <img class="qr-code" src="img/qr-code.jpg" alt="qr" width="119" height="112">
+          <p class="number-code">FGBfvcnkfdnvkk74365832ybvcvdfvfvb</p>
+          <button class="button">Copy</button>
+        </form>
+      </li>
+      <li class="tab-content__item js-tab-content" data-tab="2">
+        <form action="#" method="post" class="withdraw-form form">
+          <select class="field select" size="1" name="exchange-withdraw[]">
+            <option value="Choose exchange">Choose exchange</option>
+            <option value="300">300</option>
+            <option value="400">400</option>
+          </select>
+          <select class="field select" size="1" name="currency-withdraw[]">
+            <option value="Choose currency">Choose currency</option>
+            <option value="256">256</option>
+            <option value="240">240</option>
+          </select>
+          <select class="field" size="1" name="withdraw amount[]">
+            <option value="withdraw amount">Withdraw amount</option>
+            <option value="256">256</option>
+            <option value="240">240</option>
+          </select>
+          <button class="button">Withdraw</button>
+        </form>
+      </li>
+      <li class="tab-content__item js-tab-content" data-tab="3">
+        <form action="#" method="post" class="rebalance-form form">
+          <p>From</p>
+          <select class="field select" size="1" name="exchange-rebalance-from[]">
+            <option value="Choose exchange">Choose exchange</option>
+            <option value="300">300</option>
+            <option value="400">400</option>
+          </select>
+          <p>To</p>
+          <select class="field select" size="1" name="exchange-rebalance-to[]">
+            <option value="Choose exchange">Choose exchange</option>
+            <option value="300">300</option>
+            <option value="400">400</option>
+          </select>
+          <select class="field select" size="1" name="currency-rebalance[]">
+            <option value="Choose currency" disabled>Choose currency</option>
+            <option value="256">256</option>
+            <option value="240">240</option>
+          </select>
+          <input class="field" type="text" name="rebalance-text">
+        </form>
+      </li>
+    </ul>
+  </div>
+</section>
+<div class="overlay"></div>
+<script>
+    var jsTriggers = document.querySelectorAll('.js-tab-trigger'),
+        jsContents = document.querySelectorAll('.js-tab-content');
+    jsTriggers.forEach(function(trigger) {
+        trigger.addEventListener('click', function() {
+            var id = this.getAttribute('data-tab'),
+                content = document.querySelector('.js-tab-content[data-tab="'+id+'"]'),
+                activeTrigger = document.querySelector('.js-tab-trigger.active'),
+                activeContent = document.querySelector('.js-tab-content.active');
+
+            activeTrigger.classList.remove('active'); // 1
+            trigger.classList.add('active'); // 2
+
+            activeContent.classList.remove('active'); // 3
+            content.classList.add('active'); // 4
+        });
+    });
+</script>
+</body>
+</html>
