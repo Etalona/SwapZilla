@@ -121,6 +121,7 @@ body {
   margin-bottom: 30px;
 }
 .button {
+  margin-bottom: 40px;
   background-color: #2A6591;
   border: none;
   border-radius: 5px;
@@ -176,6 +177,37 @@ body {
   & span {
     font-weight: bold;
   }
+}
+.form-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 20px;
+  height: 20px;
+  font-size: 0;
+  border: 0;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.form-close::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right:10px;
+  width: 2px;
+  height: 25px;
+  background-color:  #9AA2A8;
+  transform: rotate(45deg);
+}
+.form-close::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right:10px;
+  width: 2px;
+  height: 25px;
+  background-color:  #9AA2A8;
+  transform: rotate(-45deg);
 }
 .overlay {
   position: fixed;
