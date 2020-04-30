@@ -73,6 +73,13 @@ body {
   justify-content: center;
   width: 380px;
 }
+.form label {
+  padding-bottom: 10px;
+  padding-left: 10px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #3C484C;
+}
 .field {
   position: relative;
   border: 1px solid #F0F0F0;
@@ -85,6 +92,9 @@ body {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+.field-text {
+  margin-bottom: 3px;
 }
 .field:active,
 .field:focus,
@@ -120,6 +130,52 @@ body {
   color: #ffffff;
   font-weight: bold;
   cursor: pointer;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.small-btn {
+  padding-top: 7px;
+  padding-bottom: 9px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+  border: none;
+  background-color: #9AA2A8;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.input-btn {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+}
+.balance-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 7px 16px rgba(60, 72, 76, 0.1);
+}
+.balance-value {
+  padding-top: 7px;
+  padding-bottom: 9px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #2A6591;
+  background-color: rgba(42, 101, 145, 0.1);
+  border-radius: 3px;
+  & span {
+    font-weight: bold;
+  }
 }
 .overlay {
   position: fixed;
